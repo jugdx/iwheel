@@ -35,7 +35,7 @@ public struct WheelSlideView: View {
 
     var textPosition: CGPoint {
         let radius = width / 2
-        let positionX = radius * 3 / 2
+        let positionX = radius * 8 / 5
         let positionY = radius
         return .init(x: positionX, y: positionY)
     }
