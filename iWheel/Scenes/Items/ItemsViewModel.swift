@@ -11,15 +11,22 @@ import Combine
 class ItemsViewModel: ObservableObject {
 
     @Published var itemsViewModel = [ItemCellViewModel]()
+    private let itemsRepository = ItemsRepository()
+    private var cancellables = Set<AnyCancellable>()
 
-    init(items: [String]) {
-        itemsViewModel = items.map { item in
-            ItemCellViewModel(name: item)
-        }
+    init() {
+        itemsRepository.$items
+            .map { items in
+                return items.map { item in
+                    return ItemCellViewModel(name: item)
+                }
+            }
+            .assign(to: \.itemsViewModel, on: self)
+            .store(in: &cancellables)
     }
 
     func removeItem(atOffsets indexSet: IndexSet) {
-        itemsViewModel.remove(atOffsets: indexSet)
+        self.itemsRepository.removeItem(atOffsets: indexSet)
     }
 
     func addItem(name: String?) {
@@ -27,6 +34,6 @@ class ItemsViewModel: ObservableObject {
               !itemsViewModel.contains(where: { $0.name.uppercased() == name.uppercased() }) else {
             return
         }
-        itemsViewModel.append(ItemCellViewModel(name: name))
+        itemsRepository.addItem(name)
     }
 }

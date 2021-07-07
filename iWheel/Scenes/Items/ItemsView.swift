@@ -42,6 +42,6 @@ struct ItemsView: View {
 
 struct ItemsView_Previews: PreviewProvider {
     static var previews: some View {
-        ItemsView(viewModel: ItemsViewModel(items: ["Charlotte", "Julien", "Thomas"]))
+        ItemsView(viewModel: ItemsViewModel())
     }
 }

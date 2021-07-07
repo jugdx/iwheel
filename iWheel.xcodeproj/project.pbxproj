@@ -17,6 +17,7 @@
 		6C2EF9052695ACCD001E1D38 /* WheelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2EF9042695ACCD001E1D38 /* WheelData.swift */; };
 		6C2EF9092695B0C5001E1D38 /* WheelSlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2EF9082695B0C5001E1D38 /* WheelSlideView.swift */; };
 		6C2EF90B2695B16E001E1D38 /* WheelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2EF90A2695B16E001E1D38 /* WheelView.swift */; };
+		8C11041A2695D6E6009EA956 /* ItemsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1104192695D6E6009EA956 /* ItemsRepository.swift */; };
 		8C370F1826959742002A62FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C370F1726959742002A62FE /* Assets.xcassets */; };
 		8C370F1B26959742002A62FE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C370F1A26959742002A62FE /* Preview Assets.xcassets */; };
 		8C370F242695AA8C002A62FE /* ItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C370F232695AA8C002A62FE /* ItemsView.swift */; };
@@ -36,6 +37,7 @@
 		6C2EF9042695ACCD001E1D38 /* WheelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelData.swift; sourceTree = "<group>"; };
 		6C2EF9082695B0C5001E1D38 /* WheelSlideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelSlideView.swift; sourceTree = "<group>"; };
 		6C2EF90A2695B16E001E1D38 /* WheelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelView.swift; sourceTree = "<group>"; };
+		8C1104192695D6E6009EA956 /* ItemsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsRepository.swift; sourceTree = "<group>"; };
 		8C370F1026959741002A62FE /* iWheel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iWheel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C370F1326959741002A62FE /* iWheelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iWheelApp.swift; sourceTree = "<group>"; };
 		8C370F1726959742002A62FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -124,6 +126,14 @@
 			path = Wheel;
 			sourceTree = "<group>";
 		};
+		8C1104182695D6D6009EA956 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				8C1104192695D6E6009EA956 /* ItemsRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
 		8C370F0726959741002A62FE = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +158,7 @@
 				454A214C2695A0040089B292 /* Scenes */,
 				454A21572695B8A20089B292 /* Data */,
 				8C86E5AC2695CD91000D18F3 /* Views */,
+				8C1104182695D6D6009EA956 /* Repository */,
 				8C370F1926959742002A62FE /* Preview Content */,
 			);
 			path = iWheel;
@@ -252,6 +263,7 @@
 				454A215A2695D0200089B292 /* iWheelApp.swift in Sources */,
 				454A21552695AB810089B292 /* WheelViewModel.swift in Sources */,
 				454A21502695A0320089B292 /* SettingsView.swift in Sources */,
+				8C11041A2695D6E6009EA956 /* ItemsRepository.swift in Sources */,
 				454A21522695A03A0089B292 /* MainView.swift in Sources */,
 				8CFB687B2695ACB700B1BB45 /* ItemCellViewModel.swift in Sources */,
 				454A215C2695D7940089B292 /* MainViewModel.swift in Sources */,
