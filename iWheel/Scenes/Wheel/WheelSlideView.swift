@@ -8,11 +8,11 @@
 import SwiftUI
 
 public struct WheelSlideView: View {
-    var geometry: GeometryProxy
+    var width: CGFloat
     var slideData: SlideData
 
     var path: Path {
-        let chartSize = geometry.size.width
+        let chartSize = width
         let radius = chartSize / 2
         let centerX = radius
         let centerY = radius
@@ -40,7 +40,7 @@ struct PieChartSlide_Previews: PreviewProvider {
     static var previews: some View {
         GeometryReader { geometry in
             WheelSlideView(
-                geometry: geometry,
+                width: geometry.size.width,
                 slideData: SlideData(
                     data: DataItem(name: "Christophe"),
                     startAngle: .degrees(-70),

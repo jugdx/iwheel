@@ -14,27 +14,28 @@ struct WheelView: View {
 
     var body: some View {
         GeometryReader { geometry in
+            let width = geometry.size.width
             self.makeWheel(
-                geometry,
+                width,
                 wheelData: viewModel.wheelData.data
             )
+            .frame(width: width, height: width)
+            .onTapGesture {
+                viewModel.rotate()
+            }
+            .rotationEffect(.degrees(viewModel.angle))
+            .animation(.easeInOut(duration: 4))
         }
-        .frame(width: 250, height: 250)
-        .onTapGesture {
-            viewModel.rotate()
-        }
-        .rotationEffect(.degrees(viewModel.angle))
-        .animation(.easeInOut(duration: 4))
     }
 
     func makeWheel(
-        _ geometry: GeometryProxy,
+        _ width: CGFloat,
         wheelData: [SlideData]
     ) -> some View {
         return ZStack {
             ForEach(0..<viewModel.wheelData.data.count, id: \.self) { index in
                 WheelSlideView(
-                    geometry: geometry,
+                    width: width,
                     slideData: wheelData[index]
                 )
             }
@@ -44,7 +45,7 @@ struct WheelView: View {
 
 struct PieChart_Previews: PreviewProvider {
     static var previews: some View {
-        let data = ["Charlotte", "Julien", "Thomas"]
+        let data = ["Charlotte", "Julien", "Thomas F", "Thomas D", "Christophe", "Raphael"]
         WheelView(viewModel: .init(wheelData: .init(data: data)))
     }
 }

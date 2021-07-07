@@ -10,12 +10,12 @@
 		454A21502695A0320089B292 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454A214F2695A0320089B292 /* SettingsView.swift */; };
 		454A21522695A03A0089B292 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454A21512695A03A0089B292 /* MainView.swift */; };
 		454A21552695AB810089B292 /* WheelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454A21542695AB810089B292 /* WheelViewModel.swift */; };
+		454A215A2695D0200089B292 /* iWheelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C370F1326959741002A62FE /* iWheelApp.swift */; };
 		6C2EF9012695AAEC001E1D38 /* DataItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2EF9002695AAEC001E1D38 /* DataItem.swift */; };
 		6C2EF9032695AC53001E1D38 /* SlideData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2EF9022695AC53001E1D38 /* SlideData.swift */; };
 		6C2EF9052695ACCD001E1D38 /* WheelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2EF9042695ACCD001E1D38 /* WheelData.swift */; };
 		6C2EF9092695B0C5001E1D38 /* WheelSlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2EF9082695B0C5001E1D38 /* WheelSlideView.swift */; };
 		6C2EF90B2695B16E001E1D38 /* WheelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2EF90A2695B16E001E1D38 /* WheelView.swift */; };
-		8C370F1426959741002A62FE /* iWheelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C370F1326959741002A62FE /* iWheelApp.swift */; };
 		8C370F1826959742002A62FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C370F1726959742002A62FE /* Assets.xcassets */; };
 		8C370F1B26959742002A62FE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C370F1A26959742002A62FE /* Preview Assets.xcassets */; };
 		8C370F242695AA8C002A62FE /* ItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C370F232695AA8C002A62FE /* ItemsView.swift */; };
@@ -246,19 +246,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				454A215A2695D0200089B292 /* iWheelApp.swift in Sources */,
 				454A21552695AB810089B292 /* WheelViewModel.swift in Sources */,
 				454A21502695A0320089B292 /* SettingsView.swift in Sources */,
 				454A21522695A03A0089B292 /* MainView.swift in Sources */,
 				8CFB687B2695ACB700B1BB45 /* ItemCellViewModel.swift in Sources */,
 				8CFB68792695ABBB00B1BB45 /* ItemCell.swift in Sources */,
 				8C370F242695AA8C002A62FE /* ItemsView.swift in Sources */,
-				8C370F1426959741002A62FE /* iWheelApp.swift in Sources */,
 				8C86E5AB2695B01B000D18F3 /* ItemsViewModel.swift in Sources */,
 				6C2EF9032695AC53001E1D38 /* SlideData.swift in Sources */,
 				6C2EF9052695ACCD001E1D38 /* WheelData.swift in Sources */,
 				6C2EF90B2695B16E001E1D38 /* WheelView.swift in Sources */,
 				6C2EF9012695AAEC001E1D38 /* DataItem.swift in Sources */,
-				8C370F1426959741002A62FE /* iWheelApp.swift in Sources */,
 				6C2EF9092695B0C5001E1D38 /* WheelSlideView.swift in Sources */,
 				8C86E5AE2695CDA5000D18F3 /* AlertText.swift in Sources */,
 			);
