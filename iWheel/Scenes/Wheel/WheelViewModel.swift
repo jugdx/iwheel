@@ -22,7 +22,7 @@ final class WheelViewModel: ObservableObject {
 
     func rotate() {
         let minimumAngle: Double = Double(minimumRotations * 360)
-        let randomAngle: Double = Double.random(in: 1...360)
+        let randomAngle: Double = Double.random(in: 1...minimumAngle)
         let finalAngle = minimumAngle + randomAngle
         angle = angle + finalAngle
     }
