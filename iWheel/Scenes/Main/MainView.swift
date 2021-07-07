@@ -20,22 +20,21 @@ struct MainView: View {
         GeometryReader { geo in
             NavigationView {
                 WheelOrEmpty(viewModel: viewModel, width: geo.size.width)
-                    .navigationTitle("iWheel (survive)")
-                    .toolbar {
-                        ToolbarItem(placement: ToolbarItemPlacement.navigationBarTrailing) {
-                            Button(
-                                action: { self.isPresented.toggle() },
-                                label: { Image(systemName: "person.fill")
+                    .navigationBarTitle("iWheel (survive)")
+                    .navigationBarItems(trailing: HStack {
+                        Button(
+                            action: { self.isPresented.toggle() },
+                            label: {
+                                Image(systemName: "square.and.pencil")
                                     .renderingMode(.template)
-                                    .foregroundColor(.black)
-                                }
-                            )
-                            .sheet(isPresented: $isPresented, content: {
-                                let viewModel = ItemsViewModel()
-                                ItemsView(viewModel: viewModel)
-                            })
-                        }
-                    }
+                                    .foregroundColor(Color(UIColor.label))
+                            }
+                        )
+                        .sheet(isPresented: $isPresented, content: {
+                            let viewModel = ItemsViewModel()
+                            ItemsView(viewModel: viewModel)
+                        })
+                    })
             }
         }
     }
@@ -104,12 +103,9 @@ private struct NavigationWheel: View {
 }
 
 private struct ArrowView: View {
-
-    @Environment(\.colorScheme) private var colorScheme
-
     var body: some View {
         Triangle()
-            .fill(colorScheme == .dark ? Color.white : Color.black)
+            .fill(Color(UIColor.label))
     }
 }
 

@@ -26,9 +26,11 @@ struct ItemsView: View {
             .navigationBarItems(leading: HStack {
                 Button(
                     action: { self.isShowingAlert.toggle() },
-                    label: { Image(systemName: "plus")
-                        .renderingMode(.template)
-                        .foregroundColor(.black) }
+                    label: {
+                        Image(systemName: "plus")
+                            .renderingMode(.template)
+                            .foregroundColor(Color(UIColor.label))
+                    }
                 )
             })
         }
