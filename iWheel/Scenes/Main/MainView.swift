@@ -37,20 +37,38 @@ private struct NavigationWheel: View {
     }
 
     var body: some View {
-        WheelView(viewModel: viewModel, width: width)
-            .padding()
-            .navigationTitle("iWheel (survive)")
-            .toolbar {
-                ToolbarItem(placement: ToolbarItemPlacement.navigationBarTrailing) {
-                    Button("Settings") {
-                        isPresented.toggle()
+        ZStack {
+            WheelView(viewModel: viewModel, width: width)
+                .padding()
+                .navigationTitle("iWheel (survive)")
+                .toolbar {
+                    ToolbarItem(placement: ToolbarItemPlacement.navigationBarTrailing) {
+                        Button("Settings") {
+                            isPresented.toggle()
+                        }
+                        .sheet(isPresented: $isPresented, content: {
+                            let viewModel = ItemsViewModel()
+                            ItemsView(viewModel: viewModel)
+                        })
                     }
-                    .sheet(isPresented: $isPresented, content: {
-                        let viewModel = ItemsViewModel()
-                        ItemsView(viewModel: viewModel)
-                    })
                 }
+            HStack {
+                Spacer()
+                ArrowView()
+                    .frame(width: 50, height: 50)
+                    .padding(.trailing, 8)
             }
+        }
+    }
+}
+
+private struct ArrowView: View {
+
+    @Environment(\.colorScheme) private var colorScheme
+
+    var body: some View {
+        Triangle()
+            .fill(colorScheme == .dark ? Color.white : Color.black)
     }
 }
 

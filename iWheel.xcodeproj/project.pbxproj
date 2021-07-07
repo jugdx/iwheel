@@ -12,6 +12,7 @@
 		454A21552695AB810089B292 /* WheelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454A21542695AB810089B292 /* WheelViewModel.swift */; };
 		454A215A2695D0200089B292 /* iWheelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C370F1326959741002A62FE /* iWheelApp.swift */; };
 		454A215C2695D7940089B292 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454A215B2695D7940089B292 /* MainViewModel.swift */; };
+		454A215E2695FE440089B292 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454A215D2695FE440089B292 /* Triangle.swift */; };
 		6C2EF9012695AAEC001E1D38 /* DataItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2EF9002695AAEC001E1D38 /* DataItem.swift */; };
 		6C2EF9032695AC53001E1D38 /* SlideData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2EF9022695AC53001E1D38 /* SlideData.swift */; };
 		6C2EF9052695ACCD001E1D38 /* WheelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2EF9042695ACCD001E1D38 /* WheelData.swift */; };
@@ -32,6 +33,7 @@
 		454A21512695A03A0089B292 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		454A21542695AB810089B292 /* WheelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelViewModel.swift; sourceTree = "<group>"; };
 		454A215B2695D7940089B292 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		454A215D2695FE440089B292 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		6C2EF9002695AAEC001E1D38 /* DataItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataItem.swift; sourceTree = "<group>"; };
 		6C2EF9022695AC53001E1D38 /* SlideData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideData.swift; sourceTree = "<group>"; };
 		6C2EF9042695ACCD001E1D38 /* WheelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelData.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				8C86E5AD2695CDA5000D18F3 /* AlertText.swift */,
+				454A215D2695FE440089B292 /* Triangle.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				454A21552695AB810089B292 /* WheelViewModel.swift in Sources */,
 				454A21502695A0320089B292 /* SettingsView.swift in Sources */,
 				8C11041A2695D6E6009EA956 /* ItemsRepository.swift in Sources */,
+				454A215E2695FE440089B292 /* Triangle.swift in Sources */,
 				454A21522695A03A0089B292 /* MainView.swift in Sources */,
 				8CFB687B2695ACB700B1BB45 /* ItemCellViewModel.swift in Sources */,
 				454A215C2695D7940089B292 /* MainViewModel.swift in Sources */,
