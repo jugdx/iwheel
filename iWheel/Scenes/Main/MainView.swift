@@ -23,9 +23,10 @@ struct MainView: View {
                     .navigationTitle("iWheel (survive)")
                     .toolbar {
                         ToolbarItem(placement: ToolbarItemPlacement.navigationBarTrailing) {
-                            Button("Settings") {
-                                self.isPresented.toggle()
-                            }
+                            Button(
+                                action: { self.isPresented.toggle() },
+                                label: { Image(systemName: "person.fill") }
+                            )
                             .sheet(isPresented: $isPresented, content: {
                                 let viewModel = ItemsViewModel()
                                 ItemsView(viewModel: viewModel)
@@ -49,7 +50,7 @@ private struct WheelOrEmpty: View {
 
     var body: some View {
         if viewModel.items.count < 2 {
-            Text("viewModel: viewModel, width: width")
+            Text("Add at least 2 items to use iWheel")
                 .navigationTitle("iWheel (survive)")
         } else {
             let data: WheelData = WheelData(data: viewModel.items)
