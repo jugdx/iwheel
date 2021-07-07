@@ -53,7 +53,7 @@ struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView(
             viewModel: .init(
-                items: ["Charlotte", "Arnaud", "Julien", "Thomas F", "Thomas D", "Christophe", "Raphael", "Olivier", "Jeremy", "Lionel", "Victor"],
+                items: ["Charlotte", "Arnaud", "Julien", "Thomas F", "Thomas D", "Christophe", "Raphael", "Olivier", "Jeremy", "Lionel"],
                 numberOfRotations: 10
             )
         )
