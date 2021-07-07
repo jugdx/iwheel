@@ -10,11 +10,16 @@ import Combine
 
 final class MainViewModel: ObservableObject {
 
+    private let itemsRepository = ItemsRepository()
+    private var cancellables = Set<AnyCancellable>()
     @Published var items: [String] = []
     @Published var numberOfRotations: Int = 10
 
-    init(items: [String], numberOfRotations: Int) {
-        self.items = items
+    init(numberOfRotations: Int) {
+        itemsRepository.$items
+            .assign(to: \.items, on: self)
+            .store(in: &cancellables)
+
         self.numberOfRotations = numberOfRotations
     }
 }

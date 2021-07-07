@@ -57,10 +57,7 @@ private struct NavigationWheel: View {
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView(
-            viewModel: .init(
-                items: ["Charlotte", "Arnaud", "Julien", "Thomas F", "Thomas D", "Christophe", "Raphael", "Olivier", "Jeremy", "Lionel"],
-                numberOfRotations: 10
-            )
+            viewModel: .init(numberOfRotations: 10)
         )
         .preferredColorScheme(.dark)
     }
