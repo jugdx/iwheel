@@ -10,7 +10,7 @@ import SwiftUI
 struct Mainiew: View {
 
     var body: some View {
-        WheelView(wheelData: .init(data: ["Julien", "Charlotte", "Thomas"]))
+        WheelView(viewModel: .init(wheelData: .init(data: ["Julien", "Charlotte", "Thomas"])))
     }
 }
 
