@@ -28,7 +28,7 @@ final class MainViewModel: ObservableObject {
         angle
             .delay(for: RunLoop.SchedulerTimeType.Stride(rotationDuration), scheduler: RunLoop.main)
             .sink { finalAngle in
-                let winnerAngle = finalAngle.truncatingRemainder(dividingBy: 360)
+                let winnerAngle = 360 - finalAngle.truncatingRemainder(dividingBy: 360)
                 let winnerData = dataWith(winnerAngle)
                 print(winnerData?.data.name ?? "NOT FOUND")
             }
