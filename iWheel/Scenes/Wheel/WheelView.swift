@@ -8,13 +8,31 @@
 import SwiftUI
 
 struct WheelView: View {
+
+    @ObservedObject var viewModel: WheelViewModel
+
+    init(viewModel: WheelViewModel) {
+        self.viewModel = viewModel
+    }
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Button("Rotate") {
+                viewModel.rotate()
+            }
+            .padding()
+            Rectangle()
+                .frame(width: 150, height: 150)
+                .foregroundColor(.red)
+                .rotationEffect(.degrees(viewModel.angle))
+                .animation(.easeInOut(duration: 2), value: viewModel.angle)
+        }
+        .padding()
     }
 }
 
 struct WheelView_Previews: PreviewProvider {
     static var previews: some View {
-        WheelView()
+        WheelView(viewModel: .init())
     }
 }

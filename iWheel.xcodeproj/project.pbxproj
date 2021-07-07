@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		454A21502695A0320089B292 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454A214F2695A0320089B292 /* SettingsView.swift */; };
 		454A21522695A03A0089B292 /* WheelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454A21512695A03A0089B292 /* WheelView.swift */; };
+		454A21552695AB810089B292 /* WheelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454A21542695AB810089B292 /* WheelViewModel.swift */; };
 		8C370F1426959741002A62FE /* iWheelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C370F1326959741002A62FE /* iWheelApp.swift */; };
 		8C370F1826959742002A62FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C370F1726959742002A62FE /* Assets.xcassets */; };
 		8C370F1B26959742002A62FE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C370F1A26959742002A62FE /* Preview Assets.xcassets */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		454A214F2695A0320089B292 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		454A21512695A03A0089B292 /* WheelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelView.swift; sourceTree = "<group>"; };
+		454A21542695AB810089B292 /* WheelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelViewModel.swift; sourceTree = "<group>"; };
 		8C370F1026959741002A62FE /* iWheel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iWheel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C370F1326959741002A62FE /* iWheelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iWheelApp.swift; sourceTree = "<group>"; };
 		8C370F1726959742002A62FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				454A21512695A03A0089B292 /* WheelView.swift */,
+				454A21542695AB810089B292 /* WheelViewModel.swift */,
 			);
 			path = Wheel;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				454A21552695AB810089B292 /* WheelViewModel.swift in Sources */,
 				454A21502695A0320089B292 /* SettingsView.swift in Sources */,
 				454A21522695A03A0089B292 /* WheelView.swift in Sources */,
 				8CFB687B2695ACB700B1BB45 /* ItemCellViewModel.swift in Sources */,
