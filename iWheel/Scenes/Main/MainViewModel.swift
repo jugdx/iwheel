@@ -12,13 +12,26 @@ final class MainViewModel: ObservableObject {
 
     private var cancellables = Set<AnyCancellable>()
     @Published var items: [String] = []
-    @Published var numberOfRotations: Int = 10
+    @Published var numberOfRotations: Int
+    @Published var rotationDuration: Double
 
-    init(numberOfRotations: Int) {
+    init(numberOfRotations: Int, rotationDuration: Double) {
+        self.rotationDuration = rotationDuration
+        self.numberOfRotations = numberOfRotations
+
         ItemsRepository.shared.$items
             .assign(to: \.items, on: self)
             .store(in: &cancellables)
+    }
 
-        self.numberOfRotations = numberOfRotations
+    func computeWinner(angle: Published<Double>.Publisher, dataWith: @escaping ((Double) -> SlideData?)) {
+        angle
+            .delay(for: RunLoop.SchedulerTimeType.Stride(rotationDuration), scheduler: RunLoop.main)
+            .sink { finalAngle in
+                let winnerAngle = finalAngle.truncatingRemainder(dividingBy: 360)
+                let winnerData = dataWith(winnerAngle)
+                print(winnerData?.data.name ?? "NOT FOUND")
+            }
+            .store(in: &cancellables)
     }
 }

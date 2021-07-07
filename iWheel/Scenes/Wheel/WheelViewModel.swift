@@ -11,13 +11,15 @@ import Combine
 final class WheelViewModel: ObservableObject {
 
     @Published var angle: Double = 0
+    @Published var duration: Double = 4
 
     let wheelData: WheelData
     private let minimumRotations: Int
 
-    init(wheelData: WheelData, minimumRotations: Int) {
+    init(wheelData: WheelData, minimumRotations: Int, duration: Double) {
         self.wheelData = wheelData
         self.minimumRotations = minimumRotations
+        self.duration = duration
     }
 
     func rotate() {

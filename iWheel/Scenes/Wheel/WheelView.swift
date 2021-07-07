@@ -25,7 +25,7 @@ struct WheelView: View {
         )
         .frame(width: width, height: width)
         .onTapGesture {
-            withAnimation(.easeOut(duration: 4)) {
+            withAnimation(.easeOut(duration: viewModel.duration)) {
                 self.viewModel.rotate()
             }
         }
@@ -50,7 +50,7 @@ struct WheelView: View {
 struct WheelView_Previews: PreviewProvider {
     static var previews: some View {
         let data = WheelData(data: ["Charlotte", "Julien", "Thomas F", "Thomas D", "Christophe", "Raphael"])
-        let viewModel = WheelViewModel(wheelData: data, minimumRotations: 10)
+        let viewModel = WheelViewModel(wheelData: data, minimumRotations: 10, duration: 4)
         return WheelView(viewModel: viewModel, width: 250)
     }
 }

@@ -16,7 +16,7 @@ class WheelData: ObservableObject {
             return
         }
 
-        var currentAngle: Double = -90
+        var currentAngle: Double = 0
         var slides: [SlideData] = []
         let total: Double = Double(data.count)
         let slideAngle: Double = 360 / total
@@ -35,5 +35,9 @@ class WheelData: ObservableObject {
 
     init(data: [SlideData]) {
         self.data = data
+    }
+
+    func data(with angle: Double) -> SlideData? {
+        data.first(where: { $0.startAngle.degrees <= angle && $0.endAngle.degrees >= angle })
     }
 }
