@@ -25,7 +25,10 @@ struct MainView: View {
                         ToolbarItem(placement: ToolbarItemPlacement.navigationBarTrailing) {
                             Button(
                                 action: { self.isPresented.toggle() },
-                                label: { Image(systemName: "person.fill") }
+                                label: { Image(systemName: "person.fill")
+                                    .renderingMode(.template)
+                                    .foregroundColor(.black)
+                                }
                             )
                             .sheet(isPresented: $isPresented, content: {
                                 let viewModel = ItemsViewModel()
