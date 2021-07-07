@@ -18,40 +18,41 @@ struct MainView: View {
     var body: some View {
         GeometryReader { geo in
             NavigationView {
-                MainWheelView(geo: geo, items: viewModel.items)
-                .padding()
-                .navigationTitle("iWheel (survive)")
-                .toolbar {
-                    ToolbarItem(placement: ToolbarItemPlacement.navigationBarTrailing) {
-                        Button("Settings") {
-                            isPresented.toggle()
+                MainWheelView(viewModel: viewModel, geo: geo)
+                    .padding()
+                    .navigationTitle("iWheel (survive)")
+                    .toolbar {
+                        ToolbarItem(placement: ToolbarItemPlacement.navigationBarTrailing) {
+                            Button("Settings") {
+                                isPresented.toggle()
+                            }
+                            .sheet(isPresented: $isPresented, content: {
+                                let viewModel = ItemsViewModel()
+                                ItemsView(viewModel: viewModel)
+                            })
                         }
-                        .sheet(isPresented: $isPresented, content: {
-                            let viewModel = ItemsViewModel()
-                            ItemsView(viewModel: viewModel)
-                        })
                     }
-                }
             }
         }
     }
 }
 
-private struct MainWheelView {
-    let geo: GeometryProxy
-    let items: [String]
+private struct MainWheelView: View {
+    @ObservedObject var viewModel: MainViewModel
+    @State var geo: GeometryProxy
 
-    init(geo: GeometryProxy, items: [String]) {
+    init(viewModel: MainViewModel, geo: GeometryProxy) {
+        self.viewModel = viewModel
         self.geo = geo
-        self.items = items
     }
 
-    @ViewBuilder
     var body: some View {
-        if items.count < 2 {
-            Text("viewModel: viewModel, width: width")
+        if viewModel.items.count < 2 {
+            return Text("viewModel: viewModel, width: width")
         } else {
-            Text("viewModel: viewModel, width: width")
+            let data: WheelData = WheelData(data: viewModel.items)
+            let wheelViewModel: WheelViewModel = WheelViewModel(wheelData: data, minimumRotations: viewModel.numberOfRotations)
+            return NavigationWheel(viewModel: wheelViewModel, width: geo.size.width * 0.9)
         }
     }
 }
@@ -69,18 +70,6 @@ private struct NavigationWheel: View {
         ZStack {
             WheelView(viewModel: viewModel, width: width)
                 .padding()
-                .navigationTitle("iWheel (survive)")
-                .toolbar {
-                    ToolbarItem(placement: ToolbarItemPlacement.navigationBarTrailing) {
-                        Button("Settings") {
-                            isPresented.toggle()
-                        }
-                        .sheet(isPresented: $isPresented, content: {
-                            let viewModel = ItemsViewModel()
-                            ItemsView(viewModel: viewModel)
-                        })
-                    }
-                }
             HStack {
                 Spacer()
                 ArrowView()
