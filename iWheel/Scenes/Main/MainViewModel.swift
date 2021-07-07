@@ -26,6 +26,7 @@ final class MainViewModel: ObservableObject {
 
     func computeWinner(angle: Published<Double>.Publisher, dataWith: @escaping ((Double) -> SlideData?)) {
         angle
+            .dropFirst()
             .delay(for: RunLoop.SchedulerTimeType.Stride(rotationDuration), scheduler: RunLoop.main)
             .sink { finalAngle in
                 let winnerAngle = 360 - finalAngle.truncatingRemainder(dividingBy: 360)
