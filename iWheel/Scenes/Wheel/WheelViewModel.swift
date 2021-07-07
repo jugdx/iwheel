@@ -13,15 +13,16 @@ final class WheelViewModel: ObservableObject {
     @Published var angle: Double = 0
 
     let wheelData: WheelData
+    private let minimumRotations: Int
 
-    init(wheelData: WheelData) {
+    init(wheelData: WheelData, minimumRotations: Int) {
         self.wheelData = wheelData
+        self.minimumRotations = minimumRotations
     }
 
     func rotate() {
-        let minimumRotations: Int = 5
         let minimumAngle: Double = Double(minimumRotations * 360)
-        let randomAngle: Double = Double.random(in: 0...360)
+        let randomAngle: Double = Double.random(in: 1...360)
         let finalAngle = minimumAngle + randomAngle
         angle = angle + finalAngle
     }

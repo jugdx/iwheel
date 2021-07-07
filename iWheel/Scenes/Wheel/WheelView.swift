@@ -11,21 +11,24 @@ import Combine
 struct WheelView: View {
 
     @ObservedObject var viewModel: WheelViewModel
+    @State private var width: CGFloat
+
+    init(viewModel: WheelViewModel, width: CGFloat) {
+        self.viewModel = viewModel
+        self.width = width
+    }
 
     var body: some View {
-        GeometryReader { geometry in
-            let width = geometry.size.width
-            self.makeWheel(
-                width,
-                wheelData: viewModel.wheelData.data
-            )
-            .frame(width: width, height: width)
-            .onTapGesture {
-                viewModel.rotate()
-            }
-            .rotationEffect(.degrees(viewModel.angle))
-            .animation(.easeInOut(duration: 4))
+        makeWheel(
+            width,
+            wheelData: viewModel.wheelData.data
+        )
+        .frame(width: width, height: width)
+        .onTapGesture {
+            viewModel.rotate()
         }
+        .rotationEffect(.degrees(viewModel.angle))
+        .animation(.easeOut(duration: 4))
     }
 
     func makeWheel(
@@ -43,9 +46,10 @@ struct WheelView: View {
     }
 }
 
-struct PieChart_Previews: PreviewProvider {
+struct WheelView_Previews: PreviewProvider {
     static var previews: some View {
-        let data = ["Charlotte", "Julien", "Thomas F", "Thomas D", "Christophe", "Raphael"]
-        WheelView(viewModel: .init(wheelData: .init(data: data)))
+        let data = WheelData(data: ["Charlotte", "Julien", "Thomas F", "Thomas D", "Christophe", "Raphael"])
+        let viewModel = WheelViewModel(wheelData: data, minimumRotations: 10)
+        return WheelView(viewModel: viewModel, width: 250)
     }
 }

@@ -7,15 +7,55 @@
 
 import SwiftUI
 
-struct Mainiew: View {
+struct MainView: View {
+
+    @ObservedObject private var viewModel: MainViewModel
+
+    init(viewModel: MainViewModel) {
+        self.viewModel = viewModel
+    }
 
     var body: some View {
-        WheelView(viewModel: .init(wheelData: .init(data: ["Julien", "Charlotte", "Thomas"])))
+        let data = WheelData(data:viewModel.items)
+        let viewModel = WheelViewModel(wheelData: data, minimumRotations: viewModel.numberOfRotations)
+        return GeometryReader { geo in
+            NavigationView {
+                NavigationWheel(viewModel: viewModel, width: geo.size.width * 0.9)
+            }
+        }
     }
 }
 
-struct WheelView_Previews: PreviewProvider {
+private struct NavigationWheel: View {
+    @ObservedObject private var viewModel: WheelViewModel
+    @State private var width: CGFloat
+
+    init(viewModel: WheelViewModel, width: CGFloat) {
+        self.viewModel = viewModel
+        self.width = width
+    }
+
+    var body: some View {
+        WheelView(viewModel: viewModel, width: width)
+            .padding()
+            .navigationTitle("iWheel (survive)")
+            .toolbar {
+                ToolbarItem(placement: ToolbarItemPlacement.navigationBarTrailing) {
+                    Button("Seetings") {
+                        // GO TO SEETINGS !
+                    }
+                }
+            }
+    }
+}
+
+struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        Mainiew()
+        MainView(
+            viewModel: .init(
+                items: ["Charlotte", "Julien", "Thomas F", "Thomas D", "Christophe", "Raphael"],
+                numberOfRotations: 10
+            )
+        )
     }
 }

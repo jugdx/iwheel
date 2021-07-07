@@ -11,6 +11,7 @@
 		454A21522695A03A0089B292 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454A21512695A03A0089B292 /* MainView.swift */; };
 		454A21552695AB810089B292 /* WheelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454A21542695AB810089B292 /* WheelViewModel.swift */; };
 		454A215A2695D0200089B292 /* iWheelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C370F1326959741002A62FE /* iWheelApp.swift */; };
+		454A215C2695D7940089B292 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454A215B2695D7940089B292 /* MainViewModel.swift */; };
 		6C2EF9012695AAEC001E1D38 /* DataItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2EF9002695AAEC001E1D38 /* DataItem.swift */; };
 		6C2EF9032695AC53001E1D38 /* SlideData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2EF9022695AC53001E1D38 /* SlideData.swift */; };
 		6C2EF9052695ACCD001E1D38 /* WheelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C2EF9042695ACCD001E1D38 /* WheelData.swift */; };
@@ -29,6 +30,7 @@
 		454A214F2695A0320089B292 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		454A21512695A03A0089B292 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		454A21542695AB810089B292 /* WheelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelViewModel.swift; sourceTree = "<group>"; };
+		454A215B2695D7940089B292 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		6C2EF9002695AAEC001E1D38 /* DataItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataItem.swift; sourceTree = "<group>"; };
 		6C2EF9022695AC53001E1D38 /* SlideData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideData.swift; sourceTree = "<group>"; };
 		6C2EF9042695ACCD001E1D38 /* WheelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelData.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				454A21512695A03A0089B292 /* MainView.swift */,
+				454A215B2695D7940089B292 /* MainViewModel.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 				454A21502695A0320089B292 /* SettingsView.swift in Sources */,
 				454A21522695A03A0089B292 /* MainView.swift in Sources */,
 				8CFB687B2695ACB700B1BB45 /* ItemCellViewModel.swift in Sources */,
+				454A215C2695D7940089B292 /* MainViewModel.swift in Sources */,
 				8CFB68792695ABBB00B1BB45 /* ItemCell.swift in Sources */,
 				8C370F242695AA8C002A62FE /* ItemsView.swift in Sources */,
 				8C86E5AB2695B01B000D18F3 /* ItemsViewModel.swift in Sources */,
@@ -389,6 +393,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"iWheel/Preview Content\"";
+				DEVELOPMENT_TEAM = BT7ZGL9XRZ;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iWheel/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -410,6 +415,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"iWheel/Preview Content\"";
+				DEVELOPMENT_TEAM = BT7ZGL9XRZ;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iWheel/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
