@@ -25,10 +25,11 @@ struct WheelView: View {
         )
         .frame(width: width, height: width)
         .onTapGesture {
-            viewModel.rotate()
+            withAnimation(.easeOut(duration: 4)) {
+                self.viewModel.rotate()
+            }
         }
         .rotationEffect(.degrees(viewModel.angle))
-        .animation(.easeOut(duration: 4))
     }
 
     func makeWheel(
