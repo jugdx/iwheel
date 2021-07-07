@@ -2,37 +2,42 @@
 //  WheelView.swift
 //  iWheel
 //
-//  Created by Julien Goudeaux on 07/07/2021.
+//  Created by Fromont Thomas on 07/07/2021.
 //
 
 import SwiftUI
+import Combine
 
 struct WheelView: View {
-
-    @ObservedObject var viewModel: WheelViewModel
-
-    init(viewModel: WheelViewModel) {
-        self.viewModel = viewModel
-    }
+    var wheelData: WheelData
 
     var body: some View {
-        VStack {
-            Button("Rotate") {
-                viewModel.rotate()
-            }
-            .padding()
-            Rectangle()
-                .frame(width: 150, height: 150)
-                .foregroundColor(.red)
-                .rotationEffect(.degrees(viewModel.angle))
-                .animation(.easeInOut(duration: 2), value: viewModel.angle)
+        GeometryReader { geometry in
+            self.makeWheel(
+                geometry,
+                wheelData: self.wheelData.data
+            )
         }
-        .padding()
+    }
+
+    func makeWheel(
+        _ geometry: GeometryProxy,
+        wheelData: [SlideData]
+    ) -> some View {
+        return ZStack {
+            ForEach(0..<wheelData.count, id: \.self) { index in
+                WheelSlideView(
+                    geometry: geometry,
+                    slideData: wheelData[index]
+                )
+            }
+        }
     }
 }
 
-struct WheelView_Previews: PreviewProvider {
+struct PieChart_Previews: PreviewProvider {
     static var previews: some View {
-        WheelView(viewModel: .init())
+        let data = ["Charlotte", "Julien", "Thomas"]
+        WheelView(wheelData: WheelData(data: data))
     }
 }

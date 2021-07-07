@@ -11,7 +11,7 @@ import SwiftUI
 struct iWheelApp: App {
     var body: some Scene {
         WindowGroup {
-            WheelView(viewModel: .init())
+            Mainiew()
         }
     }
 }
