@@ -53,9 +53,10 @@ struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView(
             viewModel: .init(
-                items: ["Charlotte", "Julien", "Thomas F", "Thomas D", "Christophe", "Raphael"],
+                items: ["Charlotte", "Arnaud", "Julien", "Thomas F", "Thomas D", "Christophe", "Raphael", "Olivier", "Jeremy", "Lionel", "Victor"],
                 numberOfRotations: 10
             )
         )
+        .preferredColorScheme(.dark)
     }
 }

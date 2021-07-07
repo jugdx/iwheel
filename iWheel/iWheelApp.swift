@@ -13,7 +13,7 @@ struct iWheelApp: App {
         WindowGroup {
             MainView(
                 viewModel: .init(
-                    items: ["Charlotte", "Julien", "Thomas F", "Thomas D", "Christophe", "Raphael"],
+                    items: ["Charlotte", "Arnaud", "Julien", "Thomas F", "Thomas D", "Christophe", "Raphael", "Olivier", "Jeremy", "Lionel", "Victor"],
                     numberOfRotations: 10
                 )
             )
