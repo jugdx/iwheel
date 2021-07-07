@@ -26,12 +26,13 @@ public struct WheelSlideView: View {
             endAngle: slideData.endAngle,
             clockwise: false
         )
+        path.closeSubpath()
         return path
     }
 
     public var body: some View {
         path.fill(slideData.data.color)
-            .overlay(path.stroke(Color.white, lineWidth: 1))
+            .overlay(path.stroke(Color(UIColor.systemBackground), lineWidth: 1))
     }
 }
 
