@@ -24,7 +24,7 @@ final class MainViewModel: ObservableObject {
             .store(in: &cancellables)
     }
 
-    func computeWinner(angle: Published<Double>.Publisher, dataWith: @escaping ((Double) -> SlideData?)) {
+    func computeWinner(angle: Published<Double>.Publisher, dataWith: @escaping ((Double) -> SlideData?))  {
         angle
             .dropFirst()
             .delay(for: RunLoop.SchedulerTimeType.Stride(rotationDuration), scheduler: RunLoop.main)

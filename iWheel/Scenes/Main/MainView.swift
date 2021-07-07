@@ -24,16 +24,16 @@ struct MainView: View {
                     .toolbar {
                         ToolbarItem(placement: ToolbarItemPlacement.navigationBarTrailing) {
                             Button(
-                                action: { self.isPresented.toggle() },
+                                action: { isPresented.toggle() },
                                 label: { Image(systemName: "person.fill")
                                     .renderingMode(.template)
                                     .foregroundColor(.black)
                                 }
                             )
-                            .sheet(isPresented: $isPresented, content: {
+                            .sheet(isPresented: $isPresented) {
                                 let viewModel = ItemsViewModel()
                                 ItemsView(viewModel: viewModel)
-                            })
+                            }
                         }
                     }
             }
