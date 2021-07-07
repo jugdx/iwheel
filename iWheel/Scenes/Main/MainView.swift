@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
-
+    @State private var isPresented: Bool = false
     @ObservedObject private var viewModel: MainViewModel
 
     init(viewModel: MainViewModel) {
@@ -16,12 +16,42 @@ struct MainView: View {
     }
 
     var body: some View {
-        let data = WheelData(data:viewModel.items)
-        let viewModel = WheelViewModel(wheelData: data, minimumRotations: viewModel.numberOfRotations)
-        return GeometryReader { geo in
+        GeometryReader { geo in
             NavigationView {
-                NavigationWheel(viewModel: viewModel, width: geo.size.width * 0.9)
+                MainWheelView(geo: geo, items: viewModel.items)
+                .padding()
+                .navigationTitle("iWheel (survive)")
+                .toolbar {
+                    ToolbarItem(placement: ToolbarItemPlacement.navigationBarTrailing) {
+                        Button("Settings") {
+                            isPresented.toggle()
+                        }
+                        .sheet(isPresented: $isPresented, content: {
+                            let viewModel = ItemsViewModel()
+                            ItemsView(viewModel: viewModel)
+                        })
+                    }
+                }
             }
+        }
+    }
+}
+
+private struct MainWheelView {
+    let geo: GeometryProxy
+    let items: [String]
+
+    init(geo: GeometryProxy, items: [String]) {
+        self.geo = geo
+        self.items = items
+    }
+
+    @ViewBuilder
+    var body: some View {
+        if items.count < 2 {
+            Text("viewModel: viewModel, width: width")
+        } else {
+            Text("viewModel: viewModel, width: width")
         }
     }
 }
@@ -29,7 +59,6 @@ struct MainView: View {
 private struct NavigationWheel: View {
     @ObservedObject private var viewModel: WheelViewModel
     @State private var width: CGFloat
-    @State private var isPresented: Bool = false
 
     init(viewModel: WheelViewModel, width: CGFloat) {
         self.viewModel = viewModel
