@@ -11,7 +11,7 @@ import Combine
 class ItemsViewModel: ObservableObject {
 
     @Published var itemsViewModel = [ItemCellViewModel]()
-    private let itemsRepository = ItemsRepository()
+    private let itemsRepository = ItemsRepository.shared
     private var cancellables = Set<AnyCancellable>()
 
     init() {

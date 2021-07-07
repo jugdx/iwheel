@@ -9,6 +9,9 @@ import Foundation
 import Combine
 
 class ItemsRepository {
+
+    static let shared = ItemsRepository()
+
     @Published var items: [String]
 
     init() {
