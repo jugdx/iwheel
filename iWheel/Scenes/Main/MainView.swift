@@ -29,6 +29,7 @@ struct MainView: View {
 private struct NavigationWheel: View {
     @ObservedObject private var viewModel: WheelViewModel
     @State private var width: CGFloat
+    @State private var isPresented: Bool = false
 
     init(viewModel: WheelViewModel, width: CGFloat) {
         self.viewModel = viewModel
@@ -41,9 +42,13 @@ private struct NavigationWheel: View {
             .navigationTitle("iWheel (survive)")
             .toolbar {
                 ToolbarItem(placement: ToolbarItemPlacement.navigationBarTrailing) {
-                    Button("Seetings") {
-                        // GO TO SEETINGS !
+                    Button("Settings") {
+                        isPresented.toggle()
                     }
+                    .sheet(isPresented: $isPresented, content: {
+                        let viewModel = ItemsViewModel()
+                        ItemsView(viewModel: viewModel)
+                    })
                 }
             }
     }
