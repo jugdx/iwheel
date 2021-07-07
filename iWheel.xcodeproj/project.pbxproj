@@ -7,16 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		454A21502695A0320089B292 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454A214F2695A0320089B292 /* SettingsView.swift */; };
+		454A21522695A03A0089B292 /* WheelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454A21512695A03A0089B292 /* WheelView.swift */; };
 		8C370F1426959741002A62FE /* iWheelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C370F1326959741002A62FE /* iWheelApp.swift */; };
-		8C370F1626959741002A62FE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C370F1526959741002A62FE /* ContentView.swift */; };
 		8C370F1826959742002A62FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C370F1726959742002A62FE /* Assets.xcassets */; };
 		8C370F1B26959742002A62FE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C370F1A26959742002A62FE /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		454A214F2695A0320089B292 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		454A21512695A03A0089B292 /* WheelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelView.swift; sourceTree = "<group>"; };
 		8C370F1026959741002A62FE /* iWheel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iWheel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C370F1326959741002A62FE /* iWheelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iWheelApp.swift; sourceTree = "<group>"; };
-		8C370F1526959741002A62FE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8C370F1726959742002A62FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C370F1A26959742002A62FE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8C370F1C26959742002A62FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -33,6 +35,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		454A214C2695A0040089B292 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				454A214E2695A01F0089B292 /* Wheel */,
+				454A214D2695A0180089B292 /* Settings */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		454A214D2695A0180089B292 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				454A214F2695A0320089B292 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		454A214E2695A01F0089B292 /* Wheel */ = {
+			isa = PBXGroup;
+			children = (
+				454A21512695A03A0089B292 /* WheelView.swift */,
+			);
+			path = Wheel;
+			sourceTree = "<group>";
+		};
+		454A21532695A07A0089B292 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8C370F1726959742002A62FE /* Assets.xcassets */,
+				8C370F1C26959742002A62FE /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		8C370F0726959741002A62FE = {
 			isa = PBXGroup;
 			children = (
@@ -53,9 +89,8 @@
 			isa = PBXGroup;
 			children = (
 				8C370F1326959741002A62FE /* iWheelApp.swift */,
-				8C370F1526959741002A62FE /* ContentView.swift */,
-				8C370F1726959742002A62FE /* Assets.xcassets */,
-				8C370F1C26959742002A62FE /* Info.plist */,
+				454A21532695A07A0089B292 /* Resources */,
+				454A214C2695A0040089B292 /* Scenes */,
 				8C370F1926959742002A62FE /* Preview Content */,
 			);
 			path = iWheel;
@@ -138,7 +173,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C370F1626959741002A62FE /* ContentView.swift in Sources */,
+				454A21502695A0320089B292 /* SettingsView.swift in Sources */,
+				454A21522695A03A0089B292 /* WheelView.swift in Sources */,
 				8C370F1426959741002A62FE /* iWheelApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,7 +306,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"iWheel/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = iWheel/Info.plist;
+				INFOPLIST_FILE = iWheel/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -291,7 +327,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"iWheel/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = iWheel/Info.plist;
+				INFOPLIST_FILE = iWheel/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
