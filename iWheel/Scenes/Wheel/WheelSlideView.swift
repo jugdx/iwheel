@@ -12,8 +12,7 @@ public struct WheelSlideView: View {
     var slideData: SlideData
 
     var path: Path {
-        let chartSize = width
-        let radius = chartSize / 2
+        let radius = width / 2
         let centerX = radius
         let centerY = radius
 
@@ -30,9 +29,27 @@ public struct WheelSlideView: View {
         return path
     }
 
+    var textAngle: Angle {
+        return (slideData.startAngle + slideData.endAngle) / 2
+    }
+
+    var textPosition: CGPoint {
+        let radius = width / 2
+        let positionX = radius * 3 / 2
+        let positionY = radius
+        return .init(x: positionX, y: positionY)
+    }
+
     public var body: some View {
-        path.fill(slideData.data.color)
-            .overlay(path.stroke(Color(UIColor.systemBackground), lineWidth: 1))
+        ZStack {
+            path.fill(slideData.data.color)
+                .overlay(path.stroke(Color(UIColor.systemBackground), lineWidth: 1))
+
+            Text(slideData.data.name)
+                .foregroundColor(slideData.data.textColor)
+                .position(textPosition)
+                .rotationEffect(textAngle)
+        }
     }
 }
 
