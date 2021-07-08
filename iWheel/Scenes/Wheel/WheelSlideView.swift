@@ -45,10 +45,15 @@ public struct WheelSlideView: View {
             path.fill(slideData.data.color)
                 .overlay(path.stroke(Color(UIColor.systemBackground), lineWidth: 1))
 
-            Text(slideData.data.name)
-                .foregroundColor(slideData.data.textColor)
+            Image(uiImage: UIImage(named: slideData.data.name) ?? UIImage())
+                .resizable()
+                .frame(width: 80.0, height: 80.0)
                 .position(textPosition)
                 .rotationEffect(textAngle)
+            /*Text(slideData.data.name)
+                .foregroundColor(slideData.data.textColor)
+                .position(textPosition)
+                .rotationEffect(textAngle)*/
         }
     }
 }
