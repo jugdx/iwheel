@@ -16,9 +16,9 @@ class DataItem {
     init(name: String) {
         self.name = name
 
-        let red = Double.random(in: 0...1)
-        let green = Double.random(in: 0...1)
-        let blue = Double.random(in: 0...1)
+        let red = Double.random(in: 0.5...1)
+        let green = Double.random(in: 0.5...1)
+        let blue = Double.random(in: 0.5...1)
         self.color = Color(
             red: red,
             green: green,
