@@ -46,6 +46,7 @@ public struct WheelSlideView: View {
                 .overlay(path.stroke(Color(UIColor.systemBackground), lineWidth: 1))
 
             Text(slideData.data.name)
+                .bold()
                 .foregroundColor(slideData.data.textColor)
                 .position(textPosition)
                 .rotationEffect(textAngle)
