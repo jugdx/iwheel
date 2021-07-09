@@ -23,7 +23,7 @@ struct MainView: View {
                     items: viewModel.items,
                     minimumRotations: viewModel.numberOfRotations,
                     duration: viewModel.rotationDuration,
-                    width: geo.size.width
+                    width: geo.size.width * 0.9
                 )
                 .navigationBarTitle("iWheel")
                 .navigationBarItems(trailing: HStack {
