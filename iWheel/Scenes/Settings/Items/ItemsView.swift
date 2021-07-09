@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ItemsView: View {
-    @ObservedObject var viewModel: ItemsViewModel
 
+    @ObservedObject var viewModel: ItemsViewModel
     @State private var isShowingAlert = false
 
     var body: some View {

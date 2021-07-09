@@ -1,5 +1,5 @@
 //
-//  WheelSlideView.swift
+//  PieChartSlideView.swift
 //  iWheel
 //
 //  Created by Fromont Thomas on 07/07/2021.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public struct WheelSlideView: View {
+public struct PieChartSlideView: View {
     var width: CGFloat
     var slideData: SlideData
 
@@ -57,7 +57,7 @@ public struct WheelSlideView: View {
 struct PieChartSlide_Previews: PreviewProvider {
     static var previews: some View {
         GeometryReader { geometry in
-            WheelSlideView(
+            PieChartSlideView(
                 width: geometry.size.width,
                 slideData: SlideData(
                     data: DataItem(name: "Christophe"),
