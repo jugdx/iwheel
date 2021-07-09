@@ -10,6 +10,7 @@
 		451F5DDF2697574C005D9130 /* WheelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451F5DDE2697574C005D9130 /* WheelView.swift */; };
 		451F5DE126977A02005D9130 /* WheelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451F5DE026977A02005D9130 /* WheelViewModel.swift */; };
 		451F5DE326977D27005D9130 /* WheelOrEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451F5DE226977D27005D9130 /* WheelOrEmptyView.swift */; };
+		451F5DE526983463005D9130 /* WheelOrEmptyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451F5DE426983463005D9130 /* WheelOrEmptyViewModel.swift */; };
 		454A21522695A03A0089B292 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454A21512695A03A0089B292 /* MainView.swift */; };
 		454A21552695AB810089B292 /* PieChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454A21542695AB810089B292 /* PieChartViewModel.swift */; };
 		454A215A2695D0200089B292 /* iWheelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C370F1326959741002A62FE /* iWheelApp.swift */; };
@@ -34,6 +35,7 @@
 		451F5DDE2697574C005D9130 /* WheelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelView.swift; sourceTree = "<group>"; };
 		451F5DE026977A02005D9130 /* WheelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelViewModel.swift; sourceTree = "<group>"; };
 		451F5DE226977D27005D9130 /* WheelOrEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelOrEmptyView.swift; sourceTree = "<group>"; };
+		451F5DE426983463005D9130 /* WheelOrEmptyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelOrEmptyViewModel.swift; sourceTree = "<group>"; };
 		454A21512695A03A0089B292 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		454A21542695AB810089B292 /* PieChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartViewModel.swift; sourceTree = "<group>"; };
 		454A215B2695D7940089B292 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				451F5DDE2697574C005D9130 /* WheelView.swift */,
 				451F5DE026977A02005D9130 /* WheelViewModel.swift */,
 				451F5DE226977D27005D9130 /* WheelOrEmptyView.swift */,
+				451F5DE426983463005D9130 /* WheelOrEmptyViewModel.swift */,
 			);
 			path = Wheel;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				454A215A2695D0200089B292 /* iWheelApp.swift in Sources */,
 				454A21552695AB810089B292 /* PieChartViewModel.swift in Sources */,
 				451F5DE126977A02005D9130 /* WheelViewModel.swift in Sources */,
+				451F5DE526983463005D9130 /* WheelOrEmptyViewModel.swift in Sources */,
 				451F5DE326977D27005D9130 /* WheelOrEmptyView.swift in Sources */,
 				8C11041A2695D6E6009EA956 /* ItemsRepository.swift in Sources */,
 				454A215E2695FE440089B292 /* Triangle.swift in Sources */,

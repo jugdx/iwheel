@@ -9,6 +9,7 @@ import SwiftUI
 import Combine
 
 final class WheelViewModel: ObservableObject {
+
     @Published var angle: Double = 0
     @Published var duration: Double = 4
     @Published var wheelData: WheelData

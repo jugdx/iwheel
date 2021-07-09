@@ -9,29 +9,23 @@ import SwiftUI
 
 struct WheelOrEmptyView: View {
 
-    @State var items: [String]
-    @State var minimumRotations: Int
-    @State var duration: Double
-    @State var width: CGFloat
+    @ObservedObject var viewModel: WheelOrEmptyViewModel
 
-    init(items: [String], minimumRotations: Int, duration: Double, width: CGFloat) {
-        self.items = items
-        self.minimumRotations = minimumRotations
-        self.duration = duration
-        self.width = width
+    init(viewModel: WheelOrEmptyViewModel) {
+        self.viewModel = viewModel
     }
 
     var body: some View {
-        if items.count < 2 {
+        if viewModel.items.count < 2 {
             Text("Add at least 2 items to use iWheel")
                 .navigationTitle("iWheel")
         } else {
-            let data: WheelData = WheelData(data: items)
+            let data: WheelData = WheelData(data: viewModel.items)
             let viewModel = WheelViewModel(
                 wheelData: data,
-                minimumRotations: minimumRotations,
-                duration: duration,
-                width: width
+                minimumRotations: viewModel.minimumRotations,
+                duration: viewModel.duration,
+                width: viewModel.width
             )
             WheelView(viewModel: viewModel)
         }
@@ -41,16 +35,20 @@ struct WheelOrEmptyView: View {
 struct WheelOrEmptyView_Previews: PreviewProvider {
     static var previews: some View {
         WheelOrEmptyView(
-            items: ["1", "2", "3"],
-            minimumRotations: 10,
-            duration: 2,
-            width: UIScreen.main.bounds.width * 0.9
+            viewModel: .init(
+                items: ["1", "2", "3"],
+                minimumRotations: 10,
+                duration: 2,
+                width: UIScreen.main.bounds.width * 0.9
+            )
         )
         WheelOrEmptyView(
-            items: ["1"],
-            minimumRotations: 10,
-            duration: 2,
-            width: UIScreen.main.bounds.width * 0.9
+            viewModel: .init(
+                items: ["1"],
+                minimumRotations: 10,
+                duration: 2,
+                width: UIScreen.main.bounds.width * 0.9
+            )
         )
     }
 }

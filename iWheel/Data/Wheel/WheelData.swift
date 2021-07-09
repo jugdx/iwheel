@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-class WheelData: ObservableObject {
+final class WheelData: ObservableObject {
     @Published private(set) var data: [SlideData] = []
 
     init(data: [String]) {

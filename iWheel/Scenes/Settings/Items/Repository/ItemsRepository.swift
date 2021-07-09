@@ -8,7 +8,11 @@
 import Foundation
 import Combine
 
-class ItemsRepository {
+final class ItemsRepository: ObservableObject {
+
+    private enum Constant {
+        static let itemsKey = "items"
+    }
 
     static let shared = ItemsRepository()
 
@@ -20,10 +24,6 @@ class ItemsRepository {
         } else {
             items = []
         }
-    }
-
-    private enum Constant {
-        static let itemsKey = "items"
     }
     
     func addItem(_ name: String) {

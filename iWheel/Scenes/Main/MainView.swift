@@ -20,10 +20,12 @@ struct MainView: View {
         GeometryReader { geo in
             NavigationView {
                 WheelOrEmptyView(
-                    items: viewModel.items,
-                    minimumRotations: viewModel.numberOfRotations,
-                    duration: viewModel.rotationDuration,
-                    width: geo.size.width * 0.9
+                    viewModel: .init(
+                        items: viewModel.items,
+                        minimumRotations: viewModel.numberOfRotations,
+                        duration: viewModel.rotationDuration,
+                        width: geo.size.width * 0.9
+                    )
                 )
                 .navigationBarTitle("iWheel")
                 .navigationBarItems(trailing: HStack {
@@ -47,8 +49,9 @@ struct MainView: View {
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
+        let items = Just(["Charlotte", "Julien", "Thomas"])
         MainView(
-            viewModel: .init(numberOfRotations: 10, rotationDuration: 4)
+            viewModel: .init(items: items.eraseToAnyPublisher(), numberOfRotations: 10, rotationDuration: 4)
         )
         .preferredColorScheme(.dark)
     }

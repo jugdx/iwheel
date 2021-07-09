@@ -11,7 +11,13 @@ import SwiftUI
 struct iWheelApp: App {
     var body: some Scene {
         WindowGroup {
-            MainView(viewModel: .init(numberOfRotations: 10, rotationDuration: 4))
+            MainView(
+                viewModel: .init(
+                    items: ItemsRepository.shared.$items.eraseToAnyPublisher(),
+                    numberOfRotations: 10,
+                    rotationDuration: 4
+                )
+            )
         }
     }
 }
